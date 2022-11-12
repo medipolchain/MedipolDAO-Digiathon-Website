@@ -7,35 +7,23 @@ import styles from "./styles.module.css";
 import { useAccount } from "../web3/hooks";
 import { getCookie } from "cookies-next";
 
-export default function LoginPage({ page }) {
+export default function LoginPage({ page, jwt }) {
   const { account } = useAccount();
-  const [user, setUser] = useState();
-  const [jwt, setJwt] = useState();
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-      axiosClient
-        .post(`verify`, {
-          token: getCookie('jwt')
-        }).then((res) => {
-          axiosClient.post('get_user_by_tckn', {
-            tckn: res.data.detail?.user.tckn
-          }).then((res) => {
-            console.log("resss",res)
-            setUser(res.data)
-          })
-        })
-        .then((res) => {
-          axiosClient
-            .post("get_user_by_tckn", {
-              tckn: res.data.detail.user.tckn,
-            })
-            .then((res) => {
-              setUser(res.data);
-            });
-        });
-    }
-
-  , [getCookie('jwt')]);
+    axiosClient
+    .post(`verify`, {
+      token: getCookie('jwt')
+    }).then((res) => {
+      axiosClient.post('get_user_by_tckn', {
+        tckn: res.data.detail?.user.tckn
+      }).then((res) => {
+        console.log("resss",res)
+        setUser(res.data)
+      })
+    })
+}, []);
 
   return (
     <div className={cn(styles.header, page ? "!bg-baseBlue" : "")}>

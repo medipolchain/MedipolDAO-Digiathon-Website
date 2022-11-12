@@ -9,13 +9,20 @@ import { getCookie } from "cookies-next";
 
 export default function LoginPage({ page }) {
   const { account } = useAccount();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState();
+  const [jwt, setJwt] = useState();
 
   useEffect(() => {
-    if (account) {
       axiosClient
         .post(`verify`, {
-          token: getCookie("jwt"),
+          token: getCookie('jwt')
+        }).then((res) => {
+          axiosClient.post('get_user_by_tckn', {
+            tckn: res.data.detail?.user.tckn
+          }).then((res) => {
+            console.log("resss",res)
+            setUser(res.data)
+          })
         })
         .then((res) => {
           axiosClient
@@ -27,7 +34,8 @@ export default function LoginPage({ page }) {
             });
         });
     }
-  }, [account?.data]);
+
+  , [getCookie('jwt')]);
 
   return (
     <div className={cn(styles.header, page ? "!bg-baseBlue" : "")}>
@@ -47,7 +55,7 @@ export default function LoginPage({ page }) {
           <Link href="/giris">
             <a className={styles.headerButton}>Hızlı Çözüm</a>
           </Link>
-          {account?.data ? (
+          {user?.name ? (
             <Link href="/profil">
               <a className={styles.headerButton}>
                 {user?.name + " " + user?.surname}

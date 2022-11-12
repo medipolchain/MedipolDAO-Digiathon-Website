@@ -22,7 +22,7 @@ export default function LoginPage() {
           if(res?.data.status_code === 200){
           console.log("sucess",res?.data.detail.token)
            setCookie('jwt',res?.data.detail.token)
-          window.location.href = '/profil/'
+          window.location.href = '/'
           }
       }
       )

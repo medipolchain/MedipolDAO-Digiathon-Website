@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { axiosClient } from "../utils/axiosClient";
 import Header from "../components/home/header";
 import HomepageHeroBlock from "../components/home/heroBlock";
+import Boxs from "../components/home/box";
 
 export default function Home() {
   const [user, setUser] = useState({});
@@ -27,6 +28,10 @@ export default function Home() {
       </Head>
       <Header />
       <HomepageHeroBlock />
+      <Boxs />
+      <div className="my-2">
+        <img src="../bg.png" />
+      </div>
     </>
   );
 }

@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.boxHeader{
+    box-shadow: 0 1em 1em -1em rgb(0 0 0 / 15%);
+    @apply
+    text-xl text-gray-600 
+    absolute w-full top-0
+}
+.sidebar{
+    @apply
+    text-sm
+    bg-[#e7ebee80]
+}
+.content{
+    box-shadow: -0.5em 0 0.5em -0.5em rgb(75 78 81 / 25%);
+    /* @apply */
+    
+}

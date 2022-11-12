@@ -1,6 +1,8 @@
 .homepageHeroBlock{
     height: 390px;
     background: radial-gradient(circle at center bottom, rgba(52, 106, 153, 0.55) 25%, rgba(52, 106, 153, 0.2) 100%), url(//cdn.e-devlet.gov.tr/themes/izmir/images/banners_webp/m00019.1.7.webp) center center / cover no-repeat, rgb(66, 132, 190);
+    @apply
+    flex items-center justify-between
 }
 .header{
     background: rgba(18,35,51,.3);
@@ -10,4 +12,37 @@
     top-0
     w-full
   
+}
+.headerButton{
+    @apply
+    py-2 px-3 border border-gray-400 text-white text-sm rounded-xl
+    /* hover:bg-baseBlue hover:text-white transition */
+}
+.headerButtonLogin{
+    @apply
+    py-2 px-3 border bg-white text-baseBlue text-sm rounded-xl
+    
+}
+
+.searchInput{
+    @apply
+   w-full h-14 rounded-xl px-4
+}
+.boxs{
+    @apply
+     flex justify-between container mx-auto 
+     -mt-10
+}
+.boxItem{
+    @apply
+    w-[20%]
+    block text-center
+}
+.boxItemIcon{
+    @apply
+    h-20 w-20 
+    rounded-full bg-white
+    relative
+    inline-block
+    after:absolute after:w-16 after:h-16 after:top-2 after:left-2 after:bg-baseBlue after:rounded-full
 }

@@ -26,15 +26,15 @@ export default function LoginPage() {
             />
           </a>
         </Link>
-        <div className="">
+        <div className="flex items-center gap-3">
           <Link href="/giris">
-            <a>Connect Wallet</a>
+            <a className={styles.headerButton}>Connect Wallet</a>
           </Link>
           <Link href="/giris">
-            <a>Hızlı Çözüm</a>
+            <a className={styles.headerButton}>Hızlı Çözüm</a>
           </Link>
           <Link href="/giris">
-            <a>Giriş Yap</a>
+            <a className={styles.headerButtonLogin}>Giriş Yap</a>
           </Link>
         </div>
       </div>

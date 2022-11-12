@@ -46,3 +46,8 @@
     inline-block
     after:absolute after:w-16 after:h-16 after:top-2 after:left-2 after:bg-baseBlue after:rounded-full
 }
+.searchLink{
+    @apply
+    text-sm text-baseBlue
+   
+}

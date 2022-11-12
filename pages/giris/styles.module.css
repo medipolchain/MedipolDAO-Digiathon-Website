@@ -1,0 +1,52 @@
+.pageBg{
+    background: radial-gradient(circle farthest-corner at center,rgba(58,137,180,0) 0,rgba(58,137,180,.8) 100%),#FFF;
+
+    @apply
+    h-[100vh] w-full 
+    flex items-center justify-center
+    p-4
+}
+.pageBox{
+    max-width: 960px;
+    min-height: 10em;
+    box-shadow: 0 0.4em 0.5em rgb(33 78 103 / 20%);
+    @apply
+    bg-white
+    w-2/4 md:w-full sm:w-full
+    rounded-md
+
+}
+.pageHead{
+    box-shadow: 0 0.56em 1em -1em rgb(58 137 180 / 75%);
+    @apply
+    rounded-t-md
+    bg-white
+    p-4
+}
+.referrerApp{
+    @apply
+    m-4
+    flex items-center justify-between
+}
+.methodSelectorBox{
+    @apply
+    m-4
+    /* flex items-center justify-between */
+    border
+    rounded-t-md
+}
+.methodSelector{
+    @apply
+    /* m-4 */
+    flex items-center justify-between
+    
+    rounded-t-md
+}
+.giris{
+    
+    @apply 
+    flex items-center
+    border-b  border-r block p-3
+    w-[20%]
+     last:border-r-0 cursor-pointer text-sm text-gray-800
+}

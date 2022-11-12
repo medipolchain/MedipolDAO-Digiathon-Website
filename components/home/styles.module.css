@@ -1,0 +1,13 @@
+.homepageHeroBlock{
+    height: 390px;
+    background: radial-gradient(circle at center bottom, rgba(52, 106, 153, 0.55) 25%, rgba(52, 106, 153, 0.2) 100%), url(//cdn.e-devlet.gov.tr/themes/izmir/images/banners_webp/m00019.1.7.webp) center center / cover no-repeat, rgb(66, 132, 190);
+}
+.header{
+    background: rgba(18,35,51,.3);
+    @apply
+    absolute
+    left-0
+    top-0
+    w-full
+  
+}

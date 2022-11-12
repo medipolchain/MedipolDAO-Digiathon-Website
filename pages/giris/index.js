@@ -2,17 +2,35 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { axiosClient } from "../../utils/axiosClient";
 import styles from "./styles.module.css";
+import { setCookie } from 'cookies-next'; 
 
 export default function LoginPage() {
   const [user, setUser] = useState({});
 
   const giris = async () => {
-    await axiosClient.post("/giris", {
-      user: user,
-    });
-  };
-
-  // prototype
+    await axiosClient.post('login', {
+      tckn: user?.tckimlik,
+      password: user?.password,
+    }).then((res) => {
+      console.log(res.data)
+       if(res.data === true){
+        // create jwt token
+        axiosClient.post('user_jwt', {
+          tckn: user?.tckimlik,
+        }).then((res) => {
+          console.log(res.data)
+          if(res?.data.status_code === 200){
+          console.log("sucess",res?.data.detail.token)
+           setCookie('jwt',res?.data.detail.token)
+          window.location.href = '/profil/'
+          }
+      }
+      )
+      }else{
+        alert('Kullanıcı adı veya şifre hatalı!')
+      }
+    })
+  }
 
   return (
     <>
@@ -75,13 +93,17 @@ export default function LoginPage() {
             <div className="m-3  text-sm text-gray-600 border-b flex py-3">
               <span className="block w-1/5">*T.C. Kimlik No</span>
               <div>
-                <input className="h-11 w-[300px] border border-[#a8acae] rounded-md" />
+                <input className="h-11 w-[300px] border border-[#a8acae] rounded-md"
+                      onChange={(e) => {setUser({...user, tckimlik: e.target.value})}}
+                />
               </div>
             </div>
             <div className="m-3  text-sm text-gray-600 border-b flex py-3">
               <span className="block w-1/5">*e-Devlet Şifresi</span>
               <div>
-                <input className="h-11 w-[300px] border border-[#a8acae] rounded-md" />
+                <input type="password" className="h-11 w-[300px] border border-[#a8acae] rounded-md"
+                      onChange={(e) => {setUser({...user, password: e.target.value})}}
+                />
                 <small className="block w-2/3">
                   * e-Devlet şifrenizi unutmanız durumunda doğruladığınız cep
                   telefonunuzdan yenileme işlemi yapabilirsiniz.
@@ -92,7 +114,7 @@ export default function LoginPage() {
               <button className="h-11 px-4 rounded-full mr-2 bg-[#4a4e501a] text-[#4a4e50e6] text-white">
                 İptal Et
               </button>
-              <button className="h-11 px-4 rounded-full mr-2 bg-baseBlue text-white hover:bg-black transition">
+              <button onClick={giris} className="h-11 px-4 rounded-full mr-2 bg-baseBlue text-white hover:bg-black transition">
                 Giriş Yap
               </button>
             </div>

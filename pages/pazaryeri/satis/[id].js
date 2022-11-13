@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Breadcrumb from "../../../components/breadcrumb";
-
+import { Progress, Space } from "antd";
 import Header from "../../../components/home/header";
 import Detail from "../../../components/detail";
 import Modal from "../../../components/detail/bidModal";
@@ -49,21 +49,21 @@ export default function Satis() {
               <Clock date={Date.now() + 1500000000} small />
               <Link href={`/pazaryeri/`}>
                 <button className="border border-gray-400 rounded-full h-8 px-4 text-base ">
-                    Listeye Geri Dön
+                  Listeye Geri Dön
                 </button>
               </Link>
-              <button className=" rounded-lg h-8 px-4 text-base bg-[blue] text-white">
+              {/* <button className=" rounded-lg h-8 px-4 text-base bg-[blue] text-white">
                 Kirala
-              </button>
+              </button> */}
               <button className="rounded-lg h-8 px-4 text-base bg-[green] text-white ">
                 Satın Al
               </button>
-              <button
+              {/* <button
                 className=" rounded-lg h-8 px-4 text-base  bg-baseBlue text-white"
                 onClick={() => showModal()}
               >
                 Satışa Aç
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="grid grid-cols-12">
@@ -71,6 +71,22 @@ export default function Satis() {
               <Detail />
             </div>
             <div className="col-span-3 content p-10 bg-white">
+              <div className="mt-2 px-3 border border-gray-200 rounded-xl mb-2">
+                <label>Satış Miktarı</label>
+                <Progress
+                  strokeColor={{
+                    "0%": "#108ee9",
+                    "100%": "#87d068",
+                  }}
+                  percent={progress}
+                  showInfo={false}
+                  className="mb-4"
+                />
+                <Space className="w-full justify-between text-lg">
+                  <span className="text-baseBlue">Satış Fiyatı : </span>
+                  <span className="text-bold">125 $</span>
+                </Space>
+              </div>
               <HistoryBox />
             </div>
           </div>

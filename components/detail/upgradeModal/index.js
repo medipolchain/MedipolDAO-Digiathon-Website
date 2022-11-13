@@ -58,7 +58,10 @@ export default function Upgrade({ isModalOpen, handleOk, handleCancel,mesken }) 
     await axiosClient.post('update_mesken',{
       meskenObjectId: mesken?._id,
       meskenTokenId: parseInt(rsp.logs[0].topics[3]),
-      token: getCookie('jwt')
+      token: getCookie('jwt'),
+      date: maintenance?.date,
+      desc: maintenance?.description,
+      price: maintenance?.price
     })
   };
 

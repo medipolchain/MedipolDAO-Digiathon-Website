@@ -17,3 +17,7 @@
     /* @apply */
     
 }
+.ant-picker{
+    @apply
+    w-full
+}

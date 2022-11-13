@@ -60,6 +60,7 @@ export default function Detay( {mesken, jwt} ) {
         handleCancel={handleCancel}
       />
       <Upgrade
+        mesken={mesken}
         isModalOpen={isUpgradeOpen}
         handleOk={handleOk}
         handleCancel={upgradeCancel}

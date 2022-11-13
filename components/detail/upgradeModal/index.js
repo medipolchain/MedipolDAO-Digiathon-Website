@@ -8,6 +8,8 @@ import { MdCheckCircle } from "react-icons/md";
 import styles from "./styles.module.css";
 import { useWeb3 } from "../../web3/providers";
 import { useAccount } from "../../web3/hooks";
+import { axiosClient } from "../../../utils/axiosClient";
+import { getCookie } from "cookies-next";
 
 const { TextArea } = Input;
 const fileList = [
@@ -20,10 +22,11 @@ const fileList = [
       "https://cdn.britannica.com/17/155017-050-9AC96FC8/Example-QR-code.jpg",
   },
 ];
-export default function Upgrade({ isModalOpen, handleOk, handleCancel }) {
+export default function Upgrade({ isModalOpen, handleOk, handleCancel,mesken }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { contractNFT } = useWeb3();
   const { account } = useAccount();
+  const { web3 } = useWeb3();
   const formatter = (value) => `${value}%`;
   const onChange = (value, dateString) => {
     console.log("Selected Time: ", value);
@@ -39,13 +42,24 @@ export default function Upgrade({ isModalOpen, handleOk, handleCancel }) {
     console.log(contractNFT);
   }, [contractNFT]);
 
-  const upgrade = () => {
+  const upgrade = async () => {
     setIsSubmitted(true);
-    contractNFT.methods.mockMint().send({
+    const response = await contractNFT.methods.mockMint().send({
       from: account?.data,
+    });
+
+    const getTransactionReceipt = async (contractResponse) => {
+      const receipt = await web3.eth.getTransactionReceipt(contractResponse.transactionHash)
+      return receipt
+    }
+
+    const rsp = await getTransactionReceipt(response);
+
+    await axiosClient.post('update_mesken',{
+      meskenObjectId: mesken?._id,
+      meskenTokenId: parseInt(rsp.logs[0].topics[3]),
+      token: getCookie('jwt')
     })
-
-
   };
 
   return (

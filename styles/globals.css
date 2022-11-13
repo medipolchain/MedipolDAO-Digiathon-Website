@@ -21,3 +21,7 @@
     @apply
     w-full
 }
+.ant-input-number{
+    @apply
+    w-full
+}

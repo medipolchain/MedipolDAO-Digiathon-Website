@@ -1,0 +1,25 @@
+.box{
+    @apply
+    
+    py-11 px-10 sm:px-2 md:px-3
+    rounded-lg
+}
+.modalTitle{
+    @apply
+     text-lg 2xl:text-2xl
+    mb-7
+}
+.modalInfoText{
+    @apply
+    text-base 2xl:text-lg block w-full
+}
+.userName{
+    @apply
+    text-lg 2xl:text-xl 
+    mb-10 block
+}
+.button{
+    @apply
+    w-full h-11 rounded-lg text-white text-base 2xl:text-xl 
+    mb-4
+}

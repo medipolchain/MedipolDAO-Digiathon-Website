@@ -1,5 +1,5 @@
 <div align="center">
-<img src="src/cold-chain-logo.png" width=25% />
+<img src="" width=25% />
 </div>
 
 <div align="center">
@@ -117,7 +117,7 @@ $ npx hardhat run scripts/deploy.ts
 ```
 
 ## Akış diyagramı
-![Akış diyagramı](src/diagram.png)
+![Akış diyagramı](src/diagram.jpg)
 
 
 ## Takım üyeleri

@@ -51,3 +51,8 @@
     text-sm text-baseBlue
    
 }
+
+.headerButtonCikis{
+    @apply
+    py-2 px-3 bg-red-500 text-white text-sm rounded-xl
+}

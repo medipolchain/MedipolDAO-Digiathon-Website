@@ -43,17 +43,22 @@ export default function LoginPage({ page, jwt }) {
           <Link href="/giris">
             <a className={styles.headerButton}>Hızlı Çözüm</a>
           </Link>
-          {user?.name ? (
+          {user?.name && (
             <Link href="/profil">
               <a className={styles.headerButton}>
                 {user?.name + " " + user?.surname}
               </a>
             </Link>
-          ) : (
-            <Link href="/giris">
+          )}
+            {account?.data ? (
+              <Link href="/giris">
+              <a className={styles.headerButtonCikis}>Çıkış - Metamask</a>
+            </Link>
+            ) : (
+              <Link href="/giris">
               <a className={styles.headerButtonLogin}>Giriş Yap</a>
             </Link>
-          )}
+            )}
         </div>
       </div>
     </div>

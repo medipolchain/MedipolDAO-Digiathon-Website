@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./bidModal";
-export default function DetailComp() {
+export default function DetailComp( {mesken} ) {
   return (
     <div>
       <div className=" p-4 bg-gray-50 rounded-lg dark:bg-gray-800">
@@ -78,7 +78,7 @@ export default function DetailComp() {
         </div>
         <div className="col-span-3">
           <span className="text-gray-500 border-b border-dashed block">
-            2326
+            {mesken?.adaNo}
           </span>
         </div>
         <div className="col-span-3">
@@ -95,7 +95,7 @@ export default function DetailComp() {
           </span>
         </div>
         <div className="col-span-3">
-          <span className="text-gray-500 border-b border-dashed block">3</span>
+          <span className="text-gray-500 border-b border-dashed block">{mesken?.parselNo}</span>
         </div>
         <div className="col-span-3">
           <span className="text-baseBlue font-bold border-b border-dashed block">
@@ -103,7 +103,7 @@ export default function DetailComp() {
           </span>
         </div>
         <div className="col-span-3">
-          <span className="text-gray-500 border-b border-dashed block">5</span>
+          <span className="text-gray-500 border-b border-dashed block">{mesken?.katNo}</span>
         </div>
         <div className="col-span-3">
           <span className="text-baseBlue font-bold border-b border-dashed block">
@@ -119,7 +119,7 @@ export default function DetailComp() {
           </span>
         </div>
         <div className="col-span-3">
-          <span className="text-gray-500 border-b border-dashed block">52</span>
+          <span className="text-gray-500 border-b border-dashed block">{mesken?.kapiNo}</span>
         </div>
         <div className="col-span-3">
           <span className="text-baseBlue font-bold border-b border-dashed block">
@@ -138,7 +138,7 @@ export default function DetailComp() {
         </div>
         <div className="col-span-3">
           <span className="text-gray-500 border-b border-dashed block">
-            6/206
+            {mesken?.pay}/{mesken?.payda}
           </span>
         </div>
       </div>

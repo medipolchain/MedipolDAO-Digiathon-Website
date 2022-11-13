@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import axios from "axios";
+import Link from "next/link";
 export default function Tabs( { tapular, jwt } ) {
   const [activeTab, setActiveTab] = useState("satis");
 
@@ -116,12 +117,11 @@ export default function Tabs( { tapular, jwt } ) {
                   <td className="py-4 px-6">{value?.adaNo}</td>
                   <td className="py-4 px-6">{value?.parselNo}</td>
                   <td className="py-4 px-6">
-                    <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
-                      Detaylar
-                    </button>
-                    <button className="h-8 px-3 bg-baseBlue text-white text-sm rounded-md m-1">
-                      İşlem Yap
-                    </button>
+                  <Link href={`/pazaryeri/satis/${value?.meskenId}`}>
+                      <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
+                        Detaylar
+                      </button>
+                    </Link>
                   </td>
                 </tr>
                   )
@@ -177,12 +177,11 @@ export default function Tabs( { tapular, jwt } ) {
                   <td className="py-4 px-6">{value?.adaNo}</td>
                   <td className="py-4 px-6">{value?.parselNo}</td>
                   <td className="py-4 px-6">
-                    <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
-                      Detaylar
-                    </button>
-                    <button className="h-8 px-3 bg-baseBlue text-white text-sm rounded-md m-1">
-                      İşlem Yap
-                    </button>
+                  <Link href={`/pazaryeri/kiralik/${value?.meskenId}`}>
+                      <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
+                        Detaylar
+                      </button>
+                    </Link>
                   </td>
                 </tr>
                   )
@@ -237,12 +236,11 @@ export default function Tabs( { tapular, jwt } ) {
                   <td className="py-4 px-6">{value?.adaNo}</td>
                   <td className="py-4 px-6">{value?.parselNo}</td>
                   <td className="py-4 px-6">
-                    <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
-                      Detaylar
-                    </button>
-                    <button className="h-8 px-3 bg-baseBlue text-white text-sm rounded-md m-1">
-                      İşlem Yap
-                    </button>
+                    <Link href={`/pazaryeri/detay/${value?.meskenId}`}>
+                      <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
+                        Detaylar
+                      </button>
+                    </Link>
                   </td>
                 </tr>
                   )

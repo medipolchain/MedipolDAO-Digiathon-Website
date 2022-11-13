@@ -7,6 +7,7 @@ import Detail from "../../../components/detail";
 import Modal from "../../../components/detail/bidModal";
 import Clock from "../../../components/clock";
 import HistoryBox from "../../../components/history";
+import Link from "next/link";
 
 export default function Satis() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,9 +47,11 @@ export default function Satis() {
             <h2>Dijital Emlak Kazanç Sistemi</h2>
             <div className="flex gap-4">
               <Clock date={Date.now() + 1500000000} small />
-              <button className="border border-gray-400 rounded-full h-8 px-4 text-base ">
-                Listeye Geri Dön
-              </button>
+              <Link href={`/pazaryeri/`}>
+                <button className="border border-gray-400 rounded-full h-8 px-4 text-base ">
+                    Listeye Geri Dön
+                </button>
+              </Link>
               <button className=" rounded-lg h-8 px-4 text-base bg-[blue] text-white">
                 Kirala
               </button>
@@ -68,7 +71,6 @@ export default function Satis() {
               <Detail />
             </div>
             <div className="col-span-3 content p-10 bg-white">
-              <HistoryBox />
               <HistoryBox />
             </div>
           </div>

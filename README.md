@@ -1,5 +1,5 @@
 <div align="center">
-<img src="" width=25% />
+<img src="src/digiathon.png" width=25% />
 </div>
 
 <div align="center">

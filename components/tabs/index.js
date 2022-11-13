@@ -117,7 +117,7 @@ export default function Tabs( { tapular, jwt } ) {
                   <td className="py-4 px-6">{value?.adaNo}</td>
                   <td className="py-4 px-6">{value?.parselNo}</td>
                   <td className="py-4 px-6">
-                  <Link href={`/pazaryeri/satis/${value?.meskenId}`}>
+                  <Link href={`/pazaryeri/satis/${value?._id}`}>
                       <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
                         Detaylar
                       </button>
@@ -177,7 +177,7 @@ export default function Tabs( { tapular, jwt } ) {
                   <td className="py-4 px-6">{value?.adaNo}</td>
                   <td className="py-4 px-6">{value?.parselNo}</td>
                   <td className="py-4 px-6">
-                  <Link href={`/pazaryeri/kiralik/${value?.meskenId}`}>
+                  <Link href={`/pazaryeri/kiralik/${value?._id}`}>
                       <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
                         Detaylar
                       </button>
@@ -236,7 +236,7 @@ export default function Tabs( { tapular, jwt } ) {
                   <td className="py-4 px-6">{value?.adaNo}</td>
                   <td className="py-4 px-6">{value?.parselNo}</td>
                   <td className="py-4 px-6">
-                    <Link href={`/pazaryeri/detay/${value?.meskenId}`}>
+                    <Link href={`/pazaryeri/detay/${value?._id}`}>
                       <button className="h-8 px-3 bg-gray-800 text-white text-sm rounded-md m-1">
                         Detaylar
                       </button>

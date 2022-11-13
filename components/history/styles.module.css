@@ -1,0 +1,5 @@
+.box{
+    @apply
+   border border-gray-200 rounded-md bg-gray-50 p-3
+   /* p-3 */
+}

@@ -1,0 +1,7 @@
+.box{
+   
+    @apply
+    h-8 w-8 rounded border
+    flex items-center justify-center
+    text-baseBlue text-sm 
+}

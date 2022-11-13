@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { UploadOutlined } from "@ant-design/icons";
 import { Modal, Space, Input, DatePicker, Button, Upload } from "antd";
@@ -6,6 +6,8 @@ import cn from "classnames";
 
 import { MdCheckCircle } from "react-icons/md";
 import styles from "./styles.module.css";
+import { useWeb3 } from "../../web3/providers";
+import { useAccount } from "../../web3/hooks";
 
 const { TextArea } = Input;
 const fileList = [
@@ -20,14 +22,32 @@ const fileList = [
 ];
 export default function Upgrade({ isModalOpen, handleOk, handleCancel }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { contractNFT } = useWeb3();
+  const { account } = useAccount();
   const formatter = (value) => `${value}%`;
   const onChange = (value, dateString) => {
     console.log("Selected Time: ", value);
     console.log("Formatted Selected Time: ", dateString);
-  };
+    setMaintanance({ ...maintenance, date: dateString })
+    };
+  const [maintenance, setMaintanance] = useState({});
   const onOk = (value) => {
     console.log("onOk: ", value);
   };
+
+  useEffect(() => {
+    console.log(contractNFT);
+  }, [contractNFT]);
+
+  const upgrade = () => {
+    setIsSubmitted(true);
+    contractNFT.methods.mockMint().send({
+      from: account?.data,
+    })
+
+
+  };
+
   return (
     <Modal
       footer={false}
@@ -52,11 +72,15 @@ export default function Upgrade({ isModalOpen, handleOk, handleCancel }) {
           <div className="mb-2">
             <span className="mb-1 block">Geliştirme Açıklaması</span>
 
-            <TextArea placeholder="%20" rows={4} />
+            <TextArea placeholder="%20" rows={4}
+            onChange={(e) => setMaintanance({ ...maintenance, description: e.target.value })}
+            />
           </div>
           <div className="mb-2">
             <span className="mb-1 block">Geliştirme Bedeli</span>
-            <Input placeholder="1 eth" />
+            <Input placeholder="1.000 eTRY"
+            onChange={(e) => setMaintanance({ ...maintenance, price: e.target.value })}
+            />
           </div>
           <div className="mb-2">
             <span className="mb-1 block">QR Bilgileri</span>
@@ -78,7 +102,7 @@ export default function Upgrade({ isModalOpen, handleOk, handleCancel }) {
       ) : (
         <button
           className={cn(styles.button, "bg-baseBlue ")}
-          onClick={() => setIsSubmitted(true)}
+          onClick={() => upgrade()}
         >
           Geliştirmeyi Paylaş
         </button>

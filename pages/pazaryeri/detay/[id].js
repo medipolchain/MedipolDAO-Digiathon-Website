@@ -5,6 +5,7 @@ import Breadcrumb from "../../../components/breadcrumb";
 import Header from "../../../components/home/header";
 import Detail from "../../../components/detail";
 import Modal from "../../../components/detail/bidModal";
+import Upgrade from "../../../components/detail/upgradeModal";
 import Clock from "../../../components/clock";
 import HistoryBox from "../../../components/history";
 import axios from "axios";
@@ -12,6 +13,7 @@ import Link from "next/link";
 
 export default function Detay( {mesken, jwt} ) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isUpgradeOpen, setIsUpgradeOpen] = useState(false);
 
   useEffect(() => {
     console.log(jwt)
@@ -21,8 +23,16 @@ export default function Detay( {mesken, jwt} ) {
     setIsModalOpen(true);
   };
 
+  const showUpgrade = () => {
+    setIsUpgradeOpen(true);
+  };
+
   const handleOk = () => {
     setIsModalOpen(false);
+  };
+
+  const upgradeCancel = () => {
+    setIsUpgradeOpen(false);
   };
 
   const handleCancel = () => {
@@ -45,6 +55,11 @@ export default function Detay( {mesken, jwt} ) {
         handleOk={handleOk}
         handleCancel={handleCancel}
       />
+      <Upgrade
+        isModalOpen={isUpgradeOpen}
+        handleOk={handleOk}
+        handleCancel={upgradeCancel}
+      />
       <div className="pt-20  container mx-auto ">
         <Breadcrumb />
         <div className="rounded-md shadow-md bg-white pt-14 relative">
@@ -57,7 +72,7 @@ export default function Detay( {mesken, jwt} ) {
                 </button>
               </Link>
               <button className=" rounded-lg h-8 px-4 text-base bg-[blue] text-white">
-                Kirala
+                Kiraya Ver
               </button>
               {jwt?.detail?.user?.tckn !== mesken?.tckn && (
                     <button className="rounded-lg h-8 px-4 text-base bg-[green] text-white ">
@@ -72,9 +87,9 @@ export default function Detay( {mesken, jwt} ) {
               </button>
               <button
                 className=" rounded-lg h-8 px-4 text-base  bg-green-700 text-white"
-                onClick={() => showModal()}
+                onClick={() => showUpgrade()}
               >
-                Geliştir
+                Geliştirme Ekle
               </button>
             </div>
           </div>

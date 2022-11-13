@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { axiosClient } from "../../utils/axiosClient";
 import styles from "./styles.module.css";
 import { useAccount } from "../web3/hooks";
-import { getCookie } from "cookies-next";
+import { getCookie, deleteCookie } from "cookies-next";
 
 export default function LoginPage({ page, jwt }) {
   const { account } = useAccount();
@@ -25,6 +25,10 @@ export default function LoginPage({ page, jwt }) {
     })
 }, []);
 
+const disconnect = () => {
+  deleteCookie('jwt')
+}
+ 
   return (
     <div className={cn(styles.header, page ? "!bg-baseBlue" : "")}>
       <div className="container mx-auto py-4 flex items-center justify-between">
@@ -56,7 +60,7 @@ export default function LoginPage({ page, jwt }) {
           )}
             {account?.data && (
               <Link href="/giris">
-              <a className={styles.headerButtonCikis}>Çıkış - Metamask</a>
+              <a onClick={disconnect} className={styles.headerButtonCikis}>Çıkış - Metamask</a>
             </Link>
             )}
         </div>

@@ -15,7 +15,7 @@
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "dotenv": "^10.0.0",
-    "ethers": "^5.4.3",
+    "ethers": "^5.7.2",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-countdown": "^2.3.3",

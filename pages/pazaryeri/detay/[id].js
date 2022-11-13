@@ -38,6 +38,7 @@ export default function Detay( {mesken, jwt} ) {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   console.log(isModalOpen);
   return (
     <div className="bg-[#e7ebee] h-screen">
@@ -51,6 +52,9 @@ export default function Detay( {mesken, jwt} ) {
       </Head>
       <Header page />
       <Modal
+        address={jwt?.detail?.user?.tckn}
+        jwt={jwt}
+        mesken={mesken}
         isModalOpen={isModalOpen}
         handleOk={handleOk}
         handleCancel={handleCancel}

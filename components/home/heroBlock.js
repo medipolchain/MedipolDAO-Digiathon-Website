@@ -41,7 +41,7 @@ export default function HeroBlock() {
           </button>
           {activeSearch && (
             <div className="bg-white rounded-b-xl p-5 absolute w-full border-t border-gray-200">
-              <Link href="">
+              <Link href="/pazaryeri">
                 <a className={styles.searchLink}>Dijital Emlak Pazaryeri</a>
               </Link>
             </div>

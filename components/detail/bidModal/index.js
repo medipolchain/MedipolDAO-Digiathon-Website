@@ -30,14 +30,6 @@ export default function BidModal({ isModalOpen, handleOk, handleCancel }) {
       <h2 className={cn(styles.modalTitle, isSubmitted && "text-center")}>
         {isSubmitted ? "Submit Offer Successfully !" : "Satışa Aç"}
       </h2>
-      <span className={cn(styles.modalInfoText, isSubmitted && "text-center")}>
-        You are about to purchase “Arizona” from{" "}
-      </span>
-      <Link href="">
-        <a className={cn(styles.userName, isSubmitted && "text-center")}>
-          @michaelbauer
-        </a>
-      </Link>
       {!isSubmitted && (
         <>
           <div className="mb-8">
@@ -48,9 +40,6 @@ export default function BidModal({ isModalOpen, handleOk, handleCancel }) {
             />
           </div>
           <div className="mb-8">
-            <Input text="Enter percentage" placeholder="%20" />
-          </div>
-          <div className="mb-8">
             <Slider
               min={10}
               max={80}
@@ -58,9 +47,6 @@ export default function BidModal({ isModalOpen, handleOk, handleCancel }) {
                 formatter,
               }}
             />
-          </div>
-          <div className="mb-8">
-            <DatePicker showTime onChange={onChange} onOk={onOk} />
           </div>
         </>
       )}

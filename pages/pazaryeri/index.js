@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Breadcrumb from "../../components/breadcrumb";
 import axios from "axios";
+import {axiosClient} from "../../utils/axiosClient";
 import Header from "../../components/home/header";
 import { useWeb3 } from "../../components/web3/providers";
 import { useAccount } from "../../components/web3/hooks";
@@ -14,6 +15,14 @@ const { account } = useAccount();
 useEffect(() => {
   console.log("tapu:", tapular);
 }, [tapular]);
+
+const connectWallet = async() => {
+  await connect();
+  await axiosClient.post('update_public_address',{
+    public_address: account?.data,
+    tckn: jwt?.detail?.user?.tckn
+  })
+}
 
   return (
     <>
@@ -80,8 +89,8 @@ useEffect(() => {
                     yöntemlerinden sizin için uygun olan bir tanesini kullanarak
                     sisteme giriş yapmış olmanız gerekmektedir.
                   </p>
-                  <button onClick={connect} className="h-11 px-4 bg-baseBlue text-white rounded-xl mt-4">
-                    Connect Wallet
+                  <button onClick={connectWallet} className="h-11 px-4 bg-baseBlue text-white rounded-xl mt-4">
+                    Cüzdan Bağla
                   </button>
                 </div>
               </div>

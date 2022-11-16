@@ -127,7 +127,7 @@ $ npx hardhat run scripts/deploy.ts
 ```
 
 ## Akış diyagramı
-![Akış diyagramı](src/diagram.jpg)
+![Akış diyagramı](src/diagram.png)
 
 
 ## Takım üyeleri

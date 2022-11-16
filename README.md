@@ -6,7 +6,6 @@
 <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=appveyor">
 <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" />
 <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" />
-<img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" />
 <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" />
 <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" />
 <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
@@ -19,10 +18,21 @@
 <h4>e-Devlet ve Web3 cüzdan integrasyonu ile Avalanche Elastic Subnet üzerinde paylaşılan akıllı kontrat ile emlak sahiplerini ve ihtiyaç sahiplerini buluşturarak DAO yapısı altında kazanç paylaşma ve karar alma mekanizmalarının bir arada buluşturulmuş hali. Fahiş fiyatları ve fiyat manipülasyonları ile vergi kaçakçılığını transparan şekilde tüm işlmeleri kullanıcılarla paylaşarak problemin çözülmesi hedeflenmiştir.</h4>
 </div>
 
+## Sunum
+||||
+| ------------- | ------------- | ------------- |
+|![](Sunum/1.png)|![](Sunum/5.png)|![](Sunum/6.png)|
+|![](Sunum/9.png)|![](Sunum/10.png)|![](Sunum/11.png)|
+|![](Sunum/12.png)|![](Sunum/13.png)|![](Sunum/14.png)|
+
+- dNFT: Dynamic NFT
+- fdNFT: Fragmented Dynamic NFT
+- esTRY: Elastic Subnet TRY
+- eTRY: 1 Liraya Sabit Dijital Token
+
 ## Kurulum
 - [Backend](https://github.com/medipolchain/MedipolDAO-Digiathon-Backend)
 - [Contracts](https://github.com/medipolchain/MedipolDAO-Digiathon-Contracts)
-
 
 ### Frontend
 ### Nodejs ve npm gereksinimleri

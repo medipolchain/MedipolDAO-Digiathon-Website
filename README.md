@@ -50,7 +50,7 @@ $ git clone https://github.com/medipolchain/MedipolDAO-Digiathon-Website.git
 
 $ cd MedipolDAO-Digiathon-Backend
 
-# A virtual environemnt is strongly recommended
+# A virtual environment is strongly recommended
 $ pip install -r requirements.txt
 ```
 

@@ -15,7 +15,7 @@
 </div>
 	
 <h1>MedipolDAO Digiathon</h1>
-<h4>e-Devlet ve Web3 cüzdan integrasyonu ile Avalanche Elastic Subnet üzerinde paylaşılan akıllı kontrat ile emlak sahiplerini ve ihtiyaç sahiplerini buluşturarak DAO yapısı altında kazanç paylaşma ve karar alma mekanizmalarının bir arada buluşturulmuş hali. Fahiş fiyatları ve fiyat manipülasyonları ile vergi kaçakçılığını transparan şekilde tüm işlmeleri kullanıcılarla paylaşarak problemin çözülmesi hedeflenmiştir.</h4>
+<h4>E-Devlet ve Web3 cüzdan entegrasyonu ile Avalanche Elastic Subnet üzerinde paylaşılan akıllı kontrat ile emlak sahiplerini ve ihtiyaç sahiplerini buluşturarak DAO yapısı altında kazanç paylaşımı ve karar alma mekanizmalarını bir arada buluşturan emlak platformu. `E-mlak`-da, fahiş fiyatları ve fiyat manipülasyonları ile vergi kaçakçılığını şeffaf şekilde tüm operasyonları kullanıcılarla paylaşarak problemlerin çözümlenmesi hedeflenmiştir.</h4>
 </div>
 
 ## [Sunum](https://www.canva.com/design/DAFR0pwKN-I/3CWiDtOk3EyAcLSjHN6BZg/view?utm_content=DAFR0pwKN-I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)

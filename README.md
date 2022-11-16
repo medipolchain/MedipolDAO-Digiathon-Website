@@ -18,7 +18,7 @@
 <h4>e-Devlet ve Web3 cüzdan integrasyonu ile Avalanche Elastic Subnet üzerinde paylaşılan akıllı kontrat ile emlak sahiplerini ve ihtiyaç sahiplerini buluşturarak DAO yapısı altında kazanç paylaşma ve karar alma mekanizmalarının bir arada buluşturulmuş hali. Fahiş fiyatları ve fiyat manipülasyonları ile vergi kaçakçılığını transparan şekilde tüm işlmeleri kullanıcılarla paylaşarak problemin çözülmesi hedeflenmiştir.</h4>
 </div>
 
-## Sunum
+## [Sunum](https://www.canva.com/design/DAFR0pwKN-I/3CWiDtOk3EyAcLSjHN6BZg/view?utm_content=DAFR0pwKN-I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 ||||
 | ------------- | ------------- | ------------- |
 |![](Sunum/1.png)|![](Sunum/5.png)|![](Sunum/6.png)|
